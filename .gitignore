@@ -1,0 +1,27 @@
+# Ignore everything file and folder in the .gitignore directory non-recursively
+/*
+
+# Include this .gitignore
+!.gitignore 
+
+!.bash_aliases
+!gitprompt-gargula.sh
+!.Xdefaults
+!.bg.png
+
+!init/
+
+# config
+!.config/
+.config/*
+
+# i3
+!.config/i3/
+.config/i3/*
+!.config/i3/config
+
+# i3status
+!.config/i3status
+
+# Compton
+!.compton.conf

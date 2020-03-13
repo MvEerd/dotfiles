@@ -181,8 +181,9 @@ bindsym $mod+Shift+BackSpace move scratchpad
 # Show the first scratchpad window
 bindsym $mod+BackSpace scratchpad show
 
-exec --no-startup-id exed bash $home/init/xrandr.sh
+exec --no-startup-id exec bash $HOME/init/xrandr.sh
 exec --no-startup-id exec bash $HOME/init/feh-bg.sh
+exec --no-startup-id exec picom -b
 
 for_window [class="^.*"] border pixel 2
 hide_edge_borders both

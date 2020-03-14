@@ -25,3 +25,12 @@
 
 # Compton
 !.compton.conf
+
+# Vim
+!.vimrc
+
+# Powerline
+!.config/powerline/*
+
+# Kitty
+!.config/kitty/*

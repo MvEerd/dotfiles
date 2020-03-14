@@ -32,7 +32,7 @@
 !.vimrc
 
 # Powerline
-!.config/powerline/*
+!.config/powerline/
 
 # Kitty
-!.config/kitty/*
+!.config/kitty/

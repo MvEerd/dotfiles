@@ -3,6 +3,7 @@
 
 # Include this .gitignore
 !.gitignore 
+!.gitignore_global
 
 !.bashrc
 !.bash_aliases

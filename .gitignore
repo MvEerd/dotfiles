@@ -40,3 +40,6 @@
 
 # Polybar
 !.config/polybar
+
+# Fonts
+!.fonts/

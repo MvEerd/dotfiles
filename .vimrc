@@ -14,6 +14,7 @@ set fileencoding=utf-8
 set autoindent smartindent
 " Show line numbers
 set number
-
-
+" Use terminal colors
+set notermguicolors t_Co=16
+" Syntax highlighting
 syntax on

@@ -1,0 +1,13 @@
+{
+	"name": "Monokai Pro",
+	"groups": {
+		"user":	{ "fg": "white", "bg": "xrdb:color1", "attrs": [] }
+	},
+	"mode_translations": {
+		"vicmd": {
+			"groups": {
+				"mode": {"fg": "darkestcyan", "bg": "white", "attrs": ["bold"]}
+			}
+		}
+	}
+}

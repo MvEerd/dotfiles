@@ -236,9 +236,9 @@ bindsym $mod+Shift+Control+Delete exec "/home/mveerd/.i3/lock.sh && sudo pm-hibe
 bindsym $mod+Shift+s exec maim -s --format=png /dev/stdout | xclip -selection clipboard -t image/png -i
 
 # assign workspaces to screens
-workspace $ws1 output DP-0
-workspace $ws2 output DP-0
-workspace $ws3 output DVI-D-0
-workspace $ws4 output DVI-D-0
-workspace $ws5 output HDMI-0
-workspace $ws6 output HDMI-
+workspace $ws1 output DP2
+workspace $ws2 output DP2
+workspace $ws3 output DP3
+workspace $ws4 output DP3
+workspace $ws5 output HDMI1
+workspace $ws6 output HDMI1

@@ -51,6 +51,10 @@ bindsym $mod+d exec --no-startup-id i3-dmenu-desktop # --dmenu='dmenu -nf "$bg" 
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# Start rofi window switcher
+bindsym Control+Return exec --no-startup-id rofi -show window
+
+
 
 # change focus
 bindsym $mod+h focus left
@@ -185,8 +189,8 @@ bindsym $mod+m mode "default"
 }
 bindsym $mod+m mode "move_workspace"
 
-gaps inner 5
-gaps outer 5
+#gaps inner 5
+#gaps outer 5
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+BackSpace move scratchpad
@@ -242,3 +246,4 @@ workspace $ws3 output DP3
 workspace $ws4 output DP3
 workspace $ws5 output HDMI1
 workspace $ws6 output HDMI1
+

@@ -7,11 +7,6 @@ fi
 alias vpnup='wg-quick up wg0'
 alias vpndown='wg-quick down wg0'
 
-alias master='~/Projects/master-all.sh'
-alias status='~/Projects/status-all.sh'
-alias update='~/Projects/update-all.sh'
-
-
 alias ci='composer install'
 alias cii='composer install --ignore-platform-reqs'
 alias cu='composer update'

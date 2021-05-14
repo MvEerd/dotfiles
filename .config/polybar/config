@@ -17,26 +17,31 @@
 ;==========================================================
 
 [colors]
-background = ${xrdb:background:#000000}
-foreground = ${xrdb:foreground:#FFFFFF}
-background-alt = ${xrdb:background:#000000}
-foreground-alt = ${xrdb:foreground:#FFFFFF}
-color0 = ${xrdb:color0:#000000}
-color1 = ${xrdb:color1:#800000}
-color2 = ${xrdb:color2:#008000}
-color3 = ${xrdb:color3:#808000}
-color4 = ${xrdb:color4:#000080}
-color5 = ${xrdb:color5:#800080}
-color6 = ${xrdb:color6:#008080}
-color7 = ${xrdb:color7:#c0c0c0}
-color8 = ${xrdb:color8:#808080}
-color9 = ${xrdb:color9:#FF0000}
-color10 = ${xrdb:color10:#00FF00}
-color11 = ${xrdb:color11:#FFFF00}
-color12 = ${xrdb:color12:#0000FF}
-color13 = ${xrdb:color13:#FF00FF}
-color14 = ${xrdb:color14:#00FFFF}
-color15 = ${xrdb:color15:#FFFFFF}
+background = ${xrdb:color8:#acadb1}
+foreground = ${xrdb:color15:#010101}
+background-alt = ${xrdb:color8:#010101}
+foreground-alt = ${xrdb:color15:#acadb1}
+active = #0884f5
+inactive = #0766bd
+highlight = ${xrdb:color2:#799ee4}
+error = ${xrdb:color9:}
+color0 = ${xrdb:color0:#c5c6cb}
+color1 = ${xrdb:color1:#67607e}
+color2 = ${xrdb:color2:#799ee4}
+color3 = ${xrdb:color3:#a1cbf1}
+color4 = ${xrdb:color4:#2d91ec}
+color5 = ${xrdb:color5:#7783ae}
+color6 = ${xrdb:color6:#37bcf3}
+color7 = ${xrdb:color7:#191e30}
+color8 = ${xrdb:color8:#acadb1}
+color9 = ${xrdb:color9:#3d306b}
+color10 = ${xrdb:color10:#3665bd}
+color11 = ${xrdb:color11:#4d8fcb}
+color12 = ${xrdb:color12:#0766bd}
+color13 = ${xrdb:color13:#394d93}
+color14 = ${xrdb:color14:#0c8ec3}
+color15 = ${xrdb:color15:#010101}
+
 
 [bar/example]
 monitor = ${env:MONITOR:}
@@ -68,7 +73,7 @@ font-2 = siji:pixelsize=10;1
 font-3 = Font Awesome 5 Pro Regular:pixelsize=15;2
 font-4 = fixed:pixelsize=10;1
 
-modules-left = i3
+modules-left = i3 pomo
 modules-center = xwindow
 modules-right = filesystem pulseaudio memory cpu temperature date
 
@@ -146,6 +151,8 @@ wrapping-scroll = false
 
 ; Only show workspaces on the same output as the bar
 pin-workspaces = true
+
+strip-wsnumbers = true
 
 label-mode-padding = 1
 label-mode-foreground = ${colors.foreground}
@@ -229,7 +236,7 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = 
+interface =
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -416,6 +423,12 @@ menu-2-0 = power off
 menu-2-0-exec = sudo poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
+
+[module/pomo]
+type = custom/script
+interval = 1
+exec = pomo status
+click-left = pomo start -t polypomo "Polybar timer" &
 
 [settings]
 screenchange-reload = true

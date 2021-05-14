@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+if [ -e $HOME/.aliases.local ]; then
+    source $HOME/.aliases.local
+fi
+
+alias vpnup='wg-quick up wg0'
+alias vpndown='wg-quick down wg0'
+
+alias master='~/Projects/master-all.sh'
+alias status='~/Projects/status-all.sh'
+alias update='~/Projects/update-all.sh'
+
+
+alias ci='composer install'
+alias cii='composer install --ignore-platform-reqs'
+alias cu='composer update'
+alias in='./install-dev.sh'
+
+alias g="git"
+alias gm='git checkout master'
+alias gp='git pull --rebase'
+alias gra='git revert --abort'
+alias gs='git status'
+alias folderbranches="ls -1 | xargs -i sh -c 'echo -n \"{}: \"; git -C \"{}\" name-rev --name-only --no-undefined --always HEAD'"
+
+# Easier navigation: .., ..., ...., ....., ~ and -
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ~="cd ~" # `cd` is probably faster to type though
+alias -- -="cd -"
+
+# Always enable colored `grep` output
+# Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# Enable aliases to be sudo’ed
+alias sudo='sudo '

@@ -41,7 +41,10 @@
 !.fonts/
 
 # wpgtk
+!.config/wpg/
+.config/wpg/*
 !.config/wpg/wpg.conf
 !.config/wpg/templates
+.config/wpg/templates/*
+!.config/wpg/templates/*.base
 !.config/wpg/wallpapers
-!.config/wpg/schemes

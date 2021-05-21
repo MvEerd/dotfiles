@@ -1,0 +1,7 @@
+[core]
+	excludesfile = /home/mveerd/.gitignore_global
+[user]
+	email = mveerd@vcn.nl
+	name = Michael van Eerd
+[cola]
+	spellcheck = false

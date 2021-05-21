@@ -1,15 +1,19 @@
-# Ignore everything file and folder in the .gitignore directory non-recursively
+# Ignore every file and folder in the .gitignore directory non-recursively
 /*
 
 # Include this .gitignore
 !.gitignore 
 !.gitignore_global
 
+!.gitconfig
+
+!.zshrc
 !.bashrc
-!.bash_aliases
+!.aliases
+
+!.p10k.zsh
 
 !.Xdefaults
-!.bg.png
 
 !init/
 
@@ -20,26 +24,27 @@
 # i3
 !.config/i3/
 !.i3/
+.i3/.git
 .config/i3/*
 !.config/i3/config
-
-# i3status
 !.config/i3status
 
-# Compton
 !.compton.conf
-
-# Vim
 !.vimrc
-
-# Powerline
 !.config/powerline/
-
-# Kitty
 !.config/kitty/
-
-# Polybar
 !.config/polybar
+!.config/neofetch
+!.config/rofi
 
 # Fonts
 !.fonts/
+
+# wpgtk
+!.config/wpg/
+.config/wpg/*
+!.config/wpg/wpg.conf
+!.config/wpg/templates
+.config/wpg/templates/*
+!.config/wpg/templates/*.base
+!.config/wpg/wallpapers

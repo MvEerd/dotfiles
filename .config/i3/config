@@ -4,9 +4,29 @@
 
 #Use CMD/Win as modifier
 set $mod Mod4
+set $alt Mod1
+
+set $coloract "#72cbcb"
+set $colorin "#4e8c8c"
+set $terminal urxvtc
+set_from_resource $color15 i3wm.color15 "#fefeff"
+set_from_resource $split i3wm.color10 "#afa8ff"
+set_from_resource $coloru i3wm.color2 "#9693c5"
+set_from_resource $color0 i3wm.color0 "#191a1c"
+set_from_resource $color8 i3wm.color8 "#303236"
 
 set_from_resource $fg i3wm.color7 #f0f0f0
 set_from_resource $bg i3wm.color4 #f0f0f0
+
+######### COLORS ##########
+#
+# class                 border    backgr    text    indicator child_border
+client.focused          $coloract $coloract $color15 $split  $coloract
+client.focused_inactive $coloract $coloract $color15 $split  $colorin
+client.unfocused        $colorin  $colorin  $color15 $split  $colorin
+client.urgent           $coloru   $coloru   $color15 $coloru $coloru
+client.placeholder      $color0   $color8   $color15 $color0 $color8
+client.background       $color0
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -51,6 +71,10 @@ bindsym $mod+d exec --no-startup-id i3-dmenu-desktop # --dmenu='dmenu -nf "$bg" 
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# Start rofi window switcher
+bindsym Control+Return exec --no-startup-id rofi -show window
+
+
 
 # change focus
 bindsym $mod+h focus left
@@ -104,16 +128,16 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws1 "1:code"
+set $ws2 "2:test"
+set $ws3 "3:testing"
+set $ws4 "4:t"
+set $ws5 "5:o"
+set $ws6 "6:x"
+set $ws7 "7:m"
+set $ws8 "8:w"
+set $ws9 "9:p"
+set $ws10 "10:r"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -185,8 +209,8 @@ bindsym $mod+m mode "default"
 }
 bindsym $mod+m mode "move_workspace"
 
-gaps inner 5
-gaps outer 5
+#gaps inner 5
+#gaps outer 5
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+BackSpace move scratchpad
@@ -201,11 +225,6 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 for_window [class="^.*"] border pixel 2
 hide_edge_borders both
-
-# class                 border  backgr. text    indicator
-client.focused_inactive $bg         #d9d9d9 $bg $bg
-client.unfocused        $fg     $fg #d9d9d9 $fg $fg
-client.focused          $bg     $bg     #000000 $bg $bg
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -236,9 +255,25 @@ bindsym $mod+Shift+Control+Delete exec "/home/mveerd/.i3/lock.sh && sudo pm-hibe
 bindsym $mod+Shift+s exec maim -s --format=png /dev/stdout | xclip -selection clipboard -t image/png -i
 
 # assign workspaces to screens
-workspace $ws1 output DP-0
-workspace $ws2 output DP-0
-workspace $ws3 output DVI-D-0
-workspace $ws4 output DVI-D-0
-workspace $ws5 output HDMI-0
-workspace $ws6 output HDMI-
+workspace $ws1 output DP2
+workspace $ws2 output DP2
+workspace $ws3 output DP3
+workspace $ws4 output DP3
+workspace $ws5 output HDMI1
+workspace $ws6 output HDMI1
+
+###### EXECUTE PROGRAMS ######
+
+bindsym $alt+Tab     exec rofi -show window
+
+# scratchpad terminal
+exec --no-startup-id kitty --name dropdown
+for_window [instance="dropdown"] floating enable, resize set 1200 800, move scratchpad
+bindsym $mod+u [instance="dropdown"] scratchpad show, move position center
+
+##### WINDOWS ######
+assign [class = "Microsoft-edge-dev"] $ws3
+# assign [instance = "music"] 10
+
+for_window [class = "Wpg"] floating enable
+

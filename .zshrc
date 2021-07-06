@@ -79,7 +79,14 @@ export COMPOSE_PARALLEL_LIMIT=500
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git wd zsh-completions zsh-autosuggestions history)
+plugins=(
+    git
+    wd
+    history
+    zsh-autosuggestions
+)
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=7"
 
 source $ZSH/oh-my-zsh.sh
 

@@ -129,15 +129,15 @@ bindsym $mod+a focus parent
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1:code"
-set $ws2 "2:test"
-set $ws3 "3:testing"
-set $ws4 "4:t"
-set $ws5 "5:o"
-set $ws6 "6:x"
-set $ws7 "7:m"
-set $ws8 "8:w"
-set $ws9 "9:p"
-set $ws10 "10:r"
+set $ws2 "2:"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5:"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -255,12 +255,12 @@ bindsym $mod+Shift+Control+Delete exec "/home/mveerd/.i3/lock.sh && sudo pm-hibe
 bindsym $mod+Shift+s exec maim -s --format=png /dev/stdout | xclip -selection clipboard -t image/png -i
 
 # assign workspaces to screens
-workspace $ws1 output DP2
-workspace $ws2 output DP2
-workspace $ws3 output DP3
-workspace $ws4 output DP3
-workspace $ws5 output HDMI1
-workspace $ws6 output HDMI1
+workspace $ws1 output DP3
+workspace $ws2 output DP3
+workspace $ws3 output DP2
+workspace $ws4 output DP2
+workspace $ws5 output DP1
+workspace $ws6 output DP1
 
 ###### EXECUTE PROGRAMS ######
 
@@ -272,7 +272,9 @@ for_window [instance="dropdown"] floating enable, resize set 1200 800, move scra
 bindsym $mod+u [instance="dropdown"] scratchpad show, move position center
 
 ##### WINDOWS ######
-assign [class = "Microsoft-edge-dev"] $ws3
+assign [class = "Slack"] $ws5
+# Outlook PWA
+assign [class = "crx_faolnafnngnfdaknnbpnkhgohbobgegn"] $ws5
 # assign [instance = "music"] 10
 
 for_window [class = "Wpg"] floating enable

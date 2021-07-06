@@ -46,22 +46,22 @@ color15 = ${{xrdb:color15:{color15}}}
 [bar/mveerd]
 monitor = ${{env:MONITOR:}}
 width = 100%
-height = 30
+height = 40
 ;offset-x = 1%
 ;offset-y = 1%
-radius = 3.0
+radius = 0.0
 fixed-center = true
-bottom = false
+bottom = true
 
 enable-ipc = true
 
 background = ${{colors.background}}
 foreground = ${{colors.foreground}}
 
-line-size = 3
+line-size = 0
 line-color = #f00
 
-border-size = 4
+border-size = 1
 border-color = #00000000
 
 padding-left = 0
@@ -70,7 +70,7 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Roboto:size=10;0
+font-0 = Arial:size=10;0
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 font-3 = Font Awesome 5 Pro Regular:pixelsize=13;2
@@ -78,7 +78,7 @@ font-4 = fixed:pixelsize=10;1
 
 modules-left = i3 pomobar
 modules-center = xwindow
-modules-right = filesystem pulseaudio memory cpu temperature date
+modules-right = pulseaudio memory cpu date
 
 tray-position = right
 tray-padding = 0
@@ -133,35 +133,35 @@ wrapping-scroll = false
 ; Only show workspaces on the same output as the bar
 pin-workspaces = true
 
-strip-wsnumbers = true
+strip-wsnumbers = false
 
 label-mode-padding = 1
 label-mode-foreground = ${{colors.foreground}}
 label-mode-background = ${{colors.background}}
 
 ; focused = Active workspace on focused monitor
-label-focused = %index%
-label-focused-background = ${{colors.background}}
+; label-focused = %index%
+label-focused-background = ${{colors.color6}}
 label-focused-underline= ${{colors.color6}}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
+; label-unfocused = %index%
 label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %index%
-label-visible-background = ${{self.label-focused-background}}
-label-visible-underline = ${{self.label-focused-underline}}
-label-visible-padding = ${{self.label-focused-padding}}
+; label-visible = %index%
+label-visible-background = ${{colors.color0}}
+; label-visible-underline = ${{self.label-focused-underline}}
+label-visible-padding = 2
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %index%
+; label-urgent = %index%
 label-urgent-background = ${{colors.color3}}
 label-urgent-padding = 2
 
 ; Separator in between workspaces
-label-separator = 
+label-separator =
 
 
 [module/mpd]
